@@ -1,10 +1,23 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  fig.width = 6,
+  fig.retina = 3,
+  out.width = "100%"
+)
+```
+
 # ggsegSUIT
 
-> **Work in Progress** — This package is under active development and
-> has not yet been officially released.
+> **Work in Progress** — This package is under active development and has not yet been officially released.
 
 SUIT cerebellar lobular atlas for the ggseg ecosystem.
 
@@ -18,10 +31,8 @@ pak::pak("ggseg/ggsegSUIT")
 ```
 
 ## SUIT atlas
-
-``` r
+```{r "suit"}
 library(ggseg)
-#> Loading required package: ggseg.formats
 library(ggsegSUIT)
 library(ggplot2)
 
@@ -37,15 +48,13 @@ ggplot() +
   ggtitle("SUIT cerebellar lobular atlas")
 ```
 
-<img src="man/figures/README-suit-1.png" alt="" width="100%" />
-
 ## Reference
 
-Diedrichsen J et al. (2009). A probabilistic MR atlas of the human
+Diedrichsen J et al. (2009). A probabilistic MR atlas of the human
 cerebellum. *NeuroImage*, 46(1), 39-46.
 
 ## Code of Conduct
 
-Please note that the ggsegSUIT project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
-you agree to abide by its terms.
+Please note that the ggsegSUIT project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
+project, you agree to abide by its terms.
