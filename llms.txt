@@ -1,67 +1,45 @@
 # ggsegSUIT
 
-SUIT cerebellar atlas for the [ggseg](https://github.com/ggseg/ggseg)
-plotting ecosystem.
+> **Work in Progress** — This package is under active development and
+> has not yet been officially released.
 
-Provides the SUIT anatomical parcellation of the cerebellum with 34
-regions covering lobules I-X, vermis subdivisions, and deep cerebellar
-nuclei (dentate, interposed, fastigial).
+SUIT cerebellar lobular atlas for the ggseg ecosystem.
 
 ## Installation
 
-We recommend installing ggseg atlases through the ggseg
-[r-universe](https://ggseg.r-universe.dev/ui#builds):
+You can install this package from [GitHub](https://github.com/) with:
 
 ``` r
-options(repos = c(
-    ggseg = "https://ggseg.r-universe.dev",
-    CRAN = "https://cloud.r-project.org"))
-
-install.packages("ggsegSUIT")
+# install.packages("pak")
+pak::pak("ggseg/ggsegSUIT")
 ```
 
-You can install the development version from
-[GitHub](https://github.com/) with:
+## SUIT atlas
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("ggseg/ggsegSUIT")
-```
-
-## Example
-
-``` r
-library(ggsegSUIT)
 library(ggseg)
+#> Loading required package: ggseg.formats
+library(ggsegSUIT)
 library(ggplot2)
 
-plot(suit) +
-  theme(legend.position = "bottom",
-        legend.text = element_text(size = 7)) +
-  guides(fill = guide_legend(ncol = 4))
+ggplot() +
+  geom_brain(
+    atlas = suit,
+    mapping = aes(fill = label),
+    position = position_brain(. ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = suit$palette, na.value = "grey") +
+  theme_void() +
+  ggtitle("SUIT cerebellar lobular atlas")
 ```
 
-## Source data
-
-The NIfTI volume and lookup tables in `data-raw/` are from the
-[DiedrichsenLab/cerebellar_atlases](https://github.com/DiedrichsenLab/cerebellar_atlases)
-GitHub repository (Diedrichsen_2009 directory):
-
-<https://github.com/DiedrichsenLab/cerebellar_atlases/tree/master/Diedrichsen_2009>
-
-Files used:
-
-- `atl-Anatom_space-MNI_dseg.nii` – discrete segmentation volume
-  (MNI152, 1mm)
-- `atl-Anatom.tsv` – region index, name, and hex color
-- `atl-Anatom.lut` – FreeSurfer-style LUT with RGB as 0-1 floats
+![](reference/figures/README-suit-1.png)
 
 ## Reference
 
-Diedrichsen J, Balsters JH, Flavell J, Cussans E, Ramnani N (2009). A
-probabilistic MR atlas of the human cerebellum. *NeuroImage*,
-46(1):39-46.
-<doi:%5B10.1016/j.neuroimage.2009.01.045>\](<https://doi.org/10.1016/j.neuroimage.2009.01.045>)
+Diedrichsen J et al. (2009). A probabilistic MR atlas of the human
+cerebellum. *NeuroImage*, 46(1), 39-46.
 
 ## Code of Conduct
 
