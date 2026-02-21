@@ -8,16 +8,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/ggseg/ggsegSUIT/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/ggsegverse/ggsegSUIT/blob/main/DESCRIPTION)
 
 Mowinckel A (2026). *ggsegSUIT: SUIT Cerebellar Lobular Atlas for the
 'ggseg' Ecosystem*. R package version 1.0.0,
-<https://github.com/ggseg/ggsegSUIT>.
+<https://github.com/ggsegverse/ggsegSUIT>.
 
     @Manual{,
       title = {ggsegSUIT: SUIT Cerebellar Lobular Atlas for the 'ggseg' Ecosystem},
       author = {Athanasia Mo Mowinckel},
       year = {2026},
       note = {R package version 1.0.0},
-      url = {https://github.com/ggseg/ggsegSUIT},
+      url = {https://github.com/ggsegverse/ggsegSUIT},
     }
