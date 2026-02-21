@@ -7,13 +7,13 @@ SUIT atlas (Diedrichsen et al., 2009). Contains 2D polygon geometry and
 ## Usage
 
 ``` r
-data(suit)
+suit()
 ```
 
-## Format
+## Value
 
 A
-[ggseg.formats::ggseg_atlas](https://ggseg.github.io/ggseg.formats/reference/ggseg_atlas.html)
+[ggseg.formats::ggseg_atlas](https://ggsegverse.github.io/ggseg.formats/reference/ggseg_atlas.html)
 object (subcortical).
 
 ## References
@@ -25,8 +25,7 @@ cerebellum.
 ## Examples
 
 ``` r
-data(suit)
-suit
+suit()
 #> 
 #> ── suit ggseg atlas ────────────────────────────────────────────────────────────
 #> Type: subcortical

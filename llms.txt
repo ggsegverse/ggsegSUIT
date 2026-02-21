@@ -53,6 +53,6 @@ By contributing to this project, you agree to abide by its terms.
 
 Brain atlases bundled in this package
 
-- [`suit`](https://ggseg.github.io/ggsegSUIT/reference/suit.md) : SUIT
+- [`suit()`](https://ggseg.github.io/ggsegSUIT/reference/suit.md) : SUIT
   Cerebellar Lobular Atlas
 
