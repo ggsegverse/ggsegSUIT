@@ -38,12 +38,12 @@ library(ggplot2)
 
 ggplot() +
   geom_brain(
-    atlas = suit,
+    atlas = suit(),
     mapping = aes(fill = label),
     position = position_brain(. ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = suit$palette, na.value = "grey") +
+  scale_fill_manual(values = suit()$palette, na.value = "grey") +
   theme_void() +
   ggtitle("SUIT cerebellar lobular atlas")
 ```
