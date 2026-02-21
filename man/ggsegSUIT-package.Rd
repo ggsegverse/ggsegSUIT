@@ -11,8 +11,8 @@ SUIT cerebellar parcellation into anatomical lobules and deep nuclei for the 'gg
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegSUIT}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegSUIT/issues}
+  \item \url{https://github.com/ggsegverse/ggsegSUIT}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegSUIT/issues}
 }
 
 }
