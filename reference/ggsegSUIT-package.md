@@ -9,9 +9,9 @@ the 'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object with both
 
 Useful links:
 
-- <https://github.com/ggseg/ggsegSUIT>
+- <https://github.com/ggsegverse/ggsegSUIT>
 
-- Report bugs at <https://github.com/ggseg/ggsegSUIT/issues>
+- Report bugs at <https://github.com/ggsegverse/ggsegSUIT/issues>
 
 ## Author
 
