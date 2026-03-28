@@ -1,10 +1,6 @@
-library(dplyr)
-library(ggsegExtra)
+library(ggseg.extra)
 library(ggseg.formats)
 
-future::plan(future::multisession(workers = 4))
-progressr::handlers("cli")
-progressr::handlers(global = TRUE)
 
 tsv <- read.delim(
   here::here("data-raw", "atl-Anatom.tsv"),
@@ -30,7 +26,7 @@ if (!file.exists(volume_file)) {
   cli::cli_abort("Volume not found: {.path {volume_file}}")
 }
 
-atlas_raw <- create_subcortical_atlas(
+atlas_raw <- create_subcortical_from_volume(
   input_volume = volume_file,
   input_lut = lut_file,
   atlas_name = "suit",
