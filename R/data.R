@@ -5,6 +5,7 @@
 #' and 3D meshes.
 #'
 #' @family ggseg_atlases
+#' @family cerebellar_atlases
 #'
 #' @references Diedrichsen J et al. (2009). A probabilistic MR atlas of the
 #'   human cerebellum. \doi{10.1016/j.neuroimage.2009.01.045}
