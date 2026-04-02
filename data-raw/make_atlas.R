@@ -1,21 +1,18 @@
-library(ggseg.extra)
+devtools::load_all(here::here("..", "..", "ggseg.extra"))
 library(ggseg.formats)
-
 
 tsv <- read.delim(
   here::here("data-raw", "atl-Anatom.tsv"),
   stringsAsFactors = FALSE
 )
 
-rgb_vals <- col2rgb(tsv$color)
-
-lut_file <- here::here("data-raw", "SUIT_LUT.txt")
-writeLines(
-  sprintf("%d %s %d %d %d 0",
-    tsv$index, tsv$name,
-    rgb_vals["red", ], rgb_vals["green", ], rgb_vals["blue", ]
-  ),
-  lut_file
+input_lut <- data.frame(
+  idx = tsv$index,
+  label = tsv$name,
+  R = col2rgb(tsv$color)["red", ],
+  G = col2rgb(tsv$color)["green", ],
+  B = col2rgb(tsv$color)["blue", ],
+  stringsAsFactors = FALSE
 )
 
 cli::cli_h1("Creating SUIT cerebellar atlas")
@@ -26,32 +23,18 @@ if (!file.exists(volume_file)) {
   cli::cli_abort("Volume not found: {.path {volume_file}}")
 }
 
-atlas_raw <- create_subcortical_from_volume(
-  input_volume = volume_file,
-  input_lut = lut_file,
+.suit <- create_cerebellar_from_volume(
+  volume = volume_file,
+  input_lut = input_lut,
   atlas_name = "suit",
   output_dir = "data-raw/suit",
-  tolerance = 1,
-  smoothness = 2,
-  decimate = 0.5,
-  skip_existing = TRUE,
+  skip_existing = FALSE,
   cleanup = FALSE,
   verbose = TRUE
 )
 
-atlas_raw <- atlas_raw |>
-  atlas_view_gather()
+cli::cli_alert_success("Atlas created with {nrow(.suit$core)} regions")
+print(.suit)
 
-suit <- atlas_raw
-
-cli::cli_alert_success("Atlas created with {nrow(suit$core)} regions")
-print(suit)
-
-brain_pals <- stats::setNames(
-  list(suit$palette),
-  suit$atlas
-)
-save(brain_pals, file = here::here("R/sysdata.rda"), compress = "xz")
-
-usethis::use_data(suit, overwrite = TRUE, compress = "xz")
-cli::cli_alert_success("Saved to data/suit.rda")
+save(.suit, file = here::here("R/sysdata.rda"), compress = "xz")
+cli::cli_alert_success("Saved to R/sysdata.rda")

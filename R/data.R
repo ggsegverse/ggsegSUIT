@@ -10,7 +10,7 @@
 #' @references Diedrichsen J et al. (2009). A probabilistic MR atlas of the
 #'   human cerebellum. \doi{10.1016/j.neuroimage.2009.01.045}
 #'
-#' @return A [ggseg.formats::ggseg_atlas] object (subcortical).
+#' @return A [ggseg.formats::ggseg_atlas] object (cerebellar).
 #' @import ggseg.formats
 #' @export
 #' @examples
