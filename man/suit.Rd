@@ -7,7 +7,7 @@
 suit()
 }
 \value{
-A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (subcortical).
+A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (cerebellar).
 }
 \description{
 Cerebellar parcellation into anatomical lobules and deep nuclei from
@@ -21,4 +21,5 @@ suit()
 Diedrichsen J et al. (2009). A probabilistic MR atlas of the
 human cerebellum. \doi{10.1016/j.neuroimage.2009.01.045}
 }
+\concept{cerebellar_atlases}
 \concept{ggseg_atlases}

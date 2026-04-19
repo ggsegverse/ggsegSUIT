@@ -1,4 +1,6 @@
-# ggsegSUIT 1.0.0
+# ggsegSUIT 0.0.1
 
-* Initial release with `suit` cerebellar lobular atlas as a unified
-  `ggseg_atlas` object for the ggseg 2.0 ecosystem.
+* Cerebellar atlas type using SUIT flatmap projection
+* Anatomical labels with hemisphere prefixes (left_, right_, vermis_)
+* Deep cerebellar nuclei (Dentate, Interposed, Fastigial) as separate 3D meshes
+* Atlas accessed via `suit()` function
