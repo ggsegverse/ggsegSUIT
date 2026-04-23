@@ -58,17 +58,8 @@ pak::pak("ggsegverse/ggsegSUIT")
 #| label: suit
 library(ggseg)
 library(ggsegSUIT)
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = suit(),
-    mapping = aes(fill = label),
-    position = position_brain(. ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = suit()$palette, na.value = "grey") +
-  theme_void()
+plot(suit())
 ```
 
 ## Data source
