@@ -4,10 +4,17 @@
 
 # ggsegSUIT
 
-> **Work in Progress** – This package is under active development and
-> has not yet been officially released.
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/ggsegverse/ggsegSUIT/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegSUIT/actions/workflows/R-CMD-check.yaml)
+[![r-universe](https://ggseg.r-universe.dev/badges/ggsegSUIT.png)](https://ggseg.r-universe.dev/ggsegSUIT)
+<!-- badges: end -->
 
 SUIT cerebellar lobular atlas for the ggseg ecosystem.
+
+Diedrichsen J, Balsters JH, Flavell J, Cussans E, & Ramnani N (2009). A
+probabilistic MR atlas of the human cerebellum. *NeuroImage*, 46(1),
+39-46.
 
 ## Installation
 
@@ -27,7 +34,7 @@ You can install this package from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
-pak::pak("ggseg/ggsegSUIT")
+pak::pak("ggsegverse/ggsegSUIT")
 ```
 
 ## SUIT atlas
@@ -35,29 +42,15 @@ pak::pak("ggseg/ggsegSUIT")
 ``` r
 library(ggseg)
 library(ggsegSUIT)
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = suit(),
-    mapping = aes(fill = label),
-    position = position_brain(. ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = suit()$palette, na.value = "grey") +
-  theme_void() +
-  ggtitle("SUIT cerebellar lobular atlas")
+plot(suit())
 ```
 
 <img src="man/figures/README-suit-1.png" style="width:100.0%" />
 
-## Reference
+## Data source
 
-Diedrichsen J et al. (2009). A probabilistic MR atlas of the human
-cerebellum. *NeuroImage*, 46(1), 39-46.
-
-## Code of Conduct
-
-Please note that the ggsegSUIT project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
-you agree to abide by its terms.
+Diedrichsen J, Balsters JH, Flavell J, Cussans E, & Ramnani N (2009). A
+probabilistic MR atlas of the human cerebellum. *NeuroImage*, 46(1),
+39-46.
+[doi:10.1016/j.neuroimage.2009.01.045](https://doi.org/10.1016/j.neuroimage.2009.01.045)
